@@ -1,20 +1,17 @@
 
 class Solution(object):
     def isPalindrome(self, s):
-        l = 0
-        r = len(s) - 1
-        
+        l=0
+        r = len(s)-1
         while l < r:
-            
-            while l < r and s[l].isalnum() == False: 
+            while l < r and not s[l].isalnum():
                 l += 1
-            while r > l and s[r].isalnum() == False: 
+            while l < r and not s[r].isalnum():
                 r -= 1
-            if l > r or s[l].lower() != s[r].lower():
+            if s[l].lower() != s[r].lower():
                 return False
-            else:
-                l += 1
-                r -= 1
+            l += 1
+            r -= 1
         return True
 
                     
